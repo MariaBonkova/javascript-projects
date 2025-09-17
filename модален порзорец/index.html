@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Модален прозорец - Пример</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #3f5efb, #42a5f5);
+        color: white;
+        text-align: center;
+      }
+
+      .button-container {
+        margin: 40px;
+      }
+
+      .show-modal {
+        padding: 12px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        background: white;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .show-modal:hover {
+        background: #ddd;
+      }
+
+      /* --- модал --- */
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        color: #333;
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
+
+      .modal.hidden {
+        display: none;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        border: none;
+        background: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #666;
+      }
+
+      /* --- overlay --- */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 5;
+      }
+
+      .overlay.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <button class="show-modal">Покажи прозорец 1</button>
+      <button class="show-modal">Покажи прозорец 2</button>
+      <button class="show-modal">Покажи прозорец 3</button>
+    </div>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>IBM NextGen</h1>
+      <p>
+        IBM NextGen е агенция за изработка на уеб страници и онлайн магазини.
+        Наш екип от професионалисти се стреми да предоставя най-доброто в
+        областта на уеб дизайна и разработката.
+      </p>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
